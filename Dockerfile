@@ -5,7 +5,8 @@ RUN apt-get update && apt-get install -y \
   python3-pip \
   git
 
-RUN pip3 install pyyaml==6.0.1
+RUN apt-get update && apt-get install -y build-essential libyaml-dev
+RUN pip3 install pyyaml
 
 COPY feed.py /usr/bin/feed.py
 
